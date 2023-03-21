@@ -1,9 +1,7 @@
 package com.example.myvestiaireweather.data.remote.api
 
 import com.example.myvestiaireweather.data.remote.dto.WeatherDto
-import com.example.myvestiaireweather.data.remote.dto.WeatherList
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiService {

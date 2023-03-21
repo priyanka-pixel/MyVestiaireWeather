@@ -18,8 +18,8 @@ fun NavGraph(
             MainScreen(navController = navController, viewModel = viewModel)
         }
         composable(
-            "${Screen.DetailScreen.route}/{index}"
-        ){
+            "${Screen.DetailScreen.route}/{index}" //destination uses a dynamic route with a parameter index
+        ) {
             it.arguments?.getString("index")?.let { index ->
                 DetailScreen(
                     navController = navController,

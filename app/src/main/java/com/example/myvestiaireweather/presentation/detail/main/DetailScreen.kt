@@ -18,8 +18,10 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
+
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun DetailScreen(
@@ -72,10 +74,13 @@ fun DetailScreen(
                 Text(
                     modifier = Modifier.fillMaxWidth(),
                     text = if (state.temp.day < 10) "Cold" else if (state.temp.day > 25) "Hot" else "Normal",
-                    style = MaterialTheme.typography.body1.copy(color = Color.White),
+                    style = MaterialTheme.typography.body1.copy(
+                        color = Color.White,
+                        fontSize = 25.sp
+                    ),
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Center,
-                    )
+                )
                 Text(
                     modifier = Modifier.fillMaxWidth(),
                     text = state.weather[0].description,
@@ -123,17 +128,12 @@ fun DetailScreen(
                 )
                 Spacer(modifier = Modifier.height(15.dp))
                 Text(
-                    text = "Morning:" + state.temp.morn.toString(),
+                    text = "Gust:" + state.gust.toString(),
                     style = MaterialTheme.typography.subtitle1,
                     textAlign = TextAlign.End,
                     color = MaterialTheme.colors.surface
                 )
-                Text(
-                    text = "Evening:" + state.temp.eve.toString(),
-                    style = MaterialTheme.typography.subtitle1,
-                    textAlign = TextAlign.Right,
-                    color = MaterialTheme.colors.surface
-                )
+
 
             }
         }

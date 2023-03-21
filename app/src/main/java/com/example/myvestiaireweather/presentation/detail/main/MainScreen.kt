@@ -33,7 +33,6 @@ fun MainScreen(navController: NavController, viewModel: WeatherViewModel) {
                     textAlign = TextAlign.Center,
                     style = MaterialTheme.typography.body1.copy(color = Color.White),
                     fontFamily = FontFamily.Serif
-
                 )
                 Card(
                     modifier = Modifier
@@ -135,28 +134,40 @@ fun MainScreen(navController: NavController, viewModel: WeatherViewModel) {
                                         .align(Alignment.CenterHorizontally)
                                         .size(100.dp)
                                 )
-                                        Row(
-                                            modifier = Modifier.fillMaxSize(),
-                                            horizontalArrangement = Arrangement.SpaceBetween,
-                                        ) {
-                                            Text(
-                                                text = "${it.temp.day}/${it.temp.night}",
-                                                style = MaterialTheme.typography.body1,
-                                                modifier = Modifier.fillMaxWidth(),
-                                                textAlign = TextAlign.Center,
+                                Row(
+                                    modifier = Modifier.fillMaxSize(),
+                                    horizontalArrangement = Arrangement.SpaceBetween,
+                                ) {
+                                    Text(
+                                        text = "${it.temp.day}/${it.temp.night}",
+                                        style = MaterialTheme.typography.body1,
+                                        modifier = Modifier.fillMaxWidth(),
+                                        textAlign = TextAlign.Center,
 
-                                            )
+                                        )
 
+                                }
                             }
+
                         }
 
                     }
-
+                }
+            } else if (state.isLoading) {
+                Box(modifier = Modifier.fillMaxSize()) {
+                    CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
+                }
+            } else if (state.error.isNotEmpty()) {
+                Box(modifier = Modifier.fillMaxSize()) {
+                    Text(
+                        text = state.error,
+                        style = MaterialTheme.typography.h2.copy(Color.White),
+                        modifier = Modifier.align(Alignment.Center)
+                    )
                 }
             }
         }
     }
-}
 }
 
 

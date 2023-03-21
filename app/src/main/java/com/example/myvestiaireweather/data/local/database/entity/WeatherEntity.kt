@@ -2,7 +2,6 @@ package com.example.myvestiaireweather.data.local.database.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.myvestiaireweather.data.remote.dto.City
 import com.example.myvestiaireweather.domain.model.WeatherData
 
 @Entity(tableName = "weather")

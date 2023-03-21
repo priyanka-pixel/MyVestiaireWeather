@@ -19,6 +19,7 @@ class WeatherRepoImpl @Inject constructor(
 ) : WeatherRepository {
     override suspend fun getWeatherListings(): Flow<Resource<List<WeatherData>>> {
         return flow {
+            emit(Resource.Loading())
             val weatherData = try {
                 apiService.getWeatherDto().list
             } catch (e: IOException) {
@@ -34,7 +35,6 @@ class WeatherRepoImpl @Inject constructor(
                 emit(Resource.Success(
                     data = listings.map { it.toWeatherData() }
                 ))
-                emit(Resource.Loading(false))
             }
         }
     }

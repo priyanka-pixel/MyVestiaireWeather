@@ -24,6 +24,7 @@ class WeatherViewModel @Inject constructor(
     init {
         getWeatherData()
     }
+
     fun getWeatherData() {
         viewModelScope.launch(Dispatchers.IO) {
             repository.getWeatherListings()
@@ -31,15 +32,15 @@ class WeatherViewModel @Inject constructor(
                     when (result) {
                         is Resource.Success -> {
                             result.data?.let { listings ->
-                                _uiState.update { it.copy(weathers = listings) }
+                                _uiState.update { it.copy(weathers = listings, isLoading = false) }
                             }
                             _uiState.value = _uiState.value.copy()
                         }
                         is Resource.Error -> {
-                            _uiState.value = _uiState.value.copy(error = "Error message")
+                            _uiState.value = _uiState.value.copy(error = "error")
                         }
                         is Resource.Loading -> {
-                            _uiState.value = _uiState.value.copy(isLoading = result.isLoading)
+                            _uiState.value = _uiState.value.copy(isLoading = true)
                         }
                     }
                 }

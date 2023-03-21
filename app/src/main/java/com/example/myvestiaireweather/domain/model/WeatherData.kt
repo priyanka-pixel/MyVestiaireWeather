@@ -1,6 +1,5 @@
 package com.example.myvestiaireweather.domain.model
 
-import com.example.myvestiaireweather.data.remote.dto.City
 import com.example.myvestiaireweather.data.remote.dto.FeelsLike
 import com.example.myvestiaireweather.data.remote.dto.Temp
 import com.example.myvestiaireweather.data.remote.dto.Weather
@@ -21,5 +20,6 @@ data class WeatherData(
     val sunset: Int = 0,
     val temp: Temp = Temp()
 )
+
 
 
