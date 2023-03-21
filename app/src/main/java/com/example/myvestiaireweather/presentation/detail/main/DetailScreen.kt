@@ -72,11 +72,10 @@ fun DetailScreen(
                 Text(
                     modifier = Modifier.fillMaxWidth(),
                     text = if (state.temp.day < 10) "Cold" else if (state.temp.day > 25) "Hot" else "Normal",
-                    style = MaterialTheme.typography.subtitle1,
+                    style = MaterialTheme.typography.body1.copy(color = Color.White),
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Center,
-                    color = MaterialTheme.colors.surface
-                )
+                    )
                 Text(
                     modifier = Modifier.fillMaxWidth(),
                     text = state.weather[0].description,

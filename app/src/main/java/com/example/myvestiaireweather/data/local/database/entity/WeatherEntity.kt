@@ -2,6 +2,7 @@ package com.example.myvestiaireweather.data.local.database.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.example.myvestiaireweather.data.remote.dto.City
 import com.example.myvestiaireweather.domain.model.WeatherData
 
 @Entity(tableName = "weather")
@@ -17,10 +18,9 @@ data class WeatherEntity(
     val rain: Double = 0.0,
     val speed: Double = 0.0,
     val sunrise: Int = 0,
-    val sunset: Int = 0,
+    val sunset: Int = 0
 
 )
-
 fun WeatherEntity.toWeatherData(): WeatherData = WeatherData(
     clouds = clouds,
     deg = deg,

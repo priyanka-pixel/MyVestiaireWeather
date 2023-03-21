@@ -29,7 +29,7 @@ fun MainScreen(navController: NavController, viewModel: WeatherViewModel) {
             if (state.weathers.isNotEmpty()) {
                 Text(
                     modifier = Modifier.fillMaxWidth(),
-                  text = "Paris",
+                    text = "Paris",
                     textAlign = TextAlign.Center,
                     style = MaterialTheme.typography.body1.copy(color = Color.White),
                     fontFamily = FontFamily.Serif
@@ -97,7 +97,13 @@ fun MainScreen(navController: NavController, viewModel: WeatherViewModel) {
                         )
                         Text(
                             modifier = Modifier.fillMaxWidth(),
-                            text = "Humidity Min: " + state.weathers[0].humidity.toString() + "°C",
+                            text = "Humidity: " + state.weathers[0].humidity.toString() + "°C",
+                            textAlign = TextAlign.End,
+                            style = MaterialTheme.typography.body1.copy(color = Color.White),
+                        )
+                        Text(
+                            modifier = Modifier.fillMaxWidth(),
+                            text = "Speed : " + state.weathers[0].speed.toString() + "°C",
                             textAlign = TextAlign.End,
                             style = MaterialTheme.typography.body1.copy(color = Color.White),
                         )
@@ -115,7 +121,7 @@ fun MainScreen(navController: NavController, viewModel: WeatherViewModel) {
                                 .clip(RoundedCornerShape(16.dp))
                                 .clickable {
                                     navController.navigate(
-                                        route = "${Screen.DetailScreen.route}/${index}"
+                                        route = "${Screen.DetailScreen.route}/${index + 1}"
                                     )
                                 },
 
@@ -129,18 +135,17 @@ fun MainScreen(navController: NavController, viewModel: WeatherViewModel) {
                                         .align(Alignment.CenterHorizontally)
                                         .size(100.dp)
                                 )
-                                Text(
-                                    modifier = Modifier.fillMaxWidth(),
-                                    text = "Max: " + it.temp.max.toString() + "°C",
-                                    textAlign = TextAlign.Start,
-                                    style = MaterialTheme.typography.body1,
-                                )
-                                Text(
-                                    modifier = Modifier.fillMaxWidth(),
-                                    text = "Min: " + it.temp.min.toString() + "°C",
-                                    textAlign = TextAlign.Start,
-                                    style = MaterialTheme.typography.body1,
-                                )
+                                        Row(
+                                            modifier = Modifier.fillMaxSize(),
+                                            horizontalArrangement = Arrangement.SpaceBetween,
+                                        ) {
+                                            Text(
+                                                text = "${it.temp.day}/${it.temp.night}",
+                                                style = MaterialTheme.typography.body1,
+                                                modifier = Modifier.fillMaxWidth(),
+                                                textAlign = TextAlign.Center,
+
+                                            )
 
                             }
                         }
@@ -151,6 +156,7 @@ fun MainScreen(navController: NavController, viewModel: WeatherViewModel) {
             }
         }
     }
+}
 }
 
 

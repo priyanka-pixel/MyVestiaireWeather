@@ -2,7 +2,6 @@ package com.example.myvestiaireweather.presentation.detail.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.myvestiaireweather.data.remote.dto.toWeatherData
 import com.example.myvestiaireweather.domain.repository.WeatherRepository
 import com.example.myvestiaireweather.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel

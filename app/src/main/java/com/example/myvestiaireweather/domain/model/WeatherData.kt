@@ -20,6 +20,6 @@ data class WeatherData(
     val sunrise: Int = 0,
     val sunset: Int = 0,
     val temp: Temp = Temp()
-    )
-val city: City = City()
+)
+
 
