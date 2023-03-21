@@ -38,6 +38,7 @@ The application will follow the following workflow:
 The user opens the application and sees the list of weather forecasts for the next 16 days for Paris.
 The user selects a day from the list, and the application displays the detail view for that day's weather.
 On the detail view, the application displays the maximum temperature, minimum temperature, humidity, and wind speed for that day's weather.
-If the temperature for the selected day is above 25°C, the application displays "Hot," and if it is below 10°C, the application displays "Cold."
-Unit Tests
+If the temperature for the selected day is above 25°C, the application displays "Hot," and if it is below 10°C, the application displays "Cold." otherwise the temperature is "Normal."
+
+Unit Tests:
 We will write unit tests to test the business logic of the application. We will use JUnit and Mockito to write the tests.
