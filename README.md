@@ -20,9 +20,10 @@ ViewModel : To implement the MVVM architecture
 Jetpack Compose and navigation : To display the list of weather forecasts
 TDD: Unit testing
 
+![Screenshot_20230321_172115](https://user-images.githubusercontent.com/59287277/226691765-ced2266d-3646-413e-96c1-fa4d16cec4f8.png)
+![Screenshot_20230321_172203](https://user-images.githubusercontent.com/59287277/226691788-05c3a817-ffbd-4881-b92e-d0c90f884efe.png)
+![Screenshot_20230321_172338](https://user-images.githubusercontent.com/59287277/226691800-b7e90f48-bf39-4d59-8808-a11b4826435f.png)
 
-![Screenshot 2023-03-21 133752](https://user-images.githubusercontent.com/59287277/226623289-d87c9f32-3d08-4498-9034-f76e5b19df95.png)
-![Screenshot 2023-03-21 133819](https://user-images.githubusercontent.com/59287277/226623338-7a474e68-689a-46b8-881d-bcb4577182aa.png)
 
 
 Screens: 
