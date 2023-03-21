@@ -1,5 +1,5 @@
 # MyVestiaireWeather
-Architecture
+Architecture: 
 I use the MVVM (Model-View-ViewModel) architecture for the application. This will help to separate the business logic from the presentation logic and make it easier to
 test the application.
 
